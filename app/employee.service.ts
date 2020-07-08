@@ -1,25 +1,17 @@
 import { Injectable } from '@angular/core'
+import { Http, Response } from '@angular/http'
+import  'rxjs/add/operator/map'
 
 @Injectable()
 export class EmployeeService{
+
+    constructor(public _http:Http){
+    }
+
+    private _url:string = "apidata/employeedata.json"
     getEmployees(){
-        return [
-            {
-                code: 'emp101', name: 'Tom', gender: 'Male',
-                annualSalary: 5500, dateOfBirth: '6/25/1988'
-            },
-            {
-                code: 'emp102', name: 'Alex', gender: 'Male',
-                annualSalary: 5700.95, dateOfBirth: '9/06/1982'
-            },
-            {
-                code: 'emp103', name: 'Mike', gender: 'Male',
-                annualSalary: 5900, dateOfBirth: '12/08/1979'
-            },
-            {
-                code: 'emp104', name: 'Mary', gender: 'Female',
-                annualSalary: 6500.826, dateOfBirth: '10/14/1980'
-            },
-        ]
+        return this._http.get(this._url)
+                    .map((response:Response) => response.json());
+      
     }
 }

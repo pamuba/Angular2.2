@@ -17,7 +17,9 @@ var EmployeeListComponent = /** @class */ (function () {
         this.employees = [];
     }
     EmployeeListComponent.prototype.ngOnInit = function () {
-        this.employees = this._employeeService.getEmployees();
+        var _this = this;
+        this._employeeService.getEmployees()
+            .subscribe(function (resEmployeeData) { _this.employees = resEmployeeData; });
     };
     EmployeeListComponent = __decorate([
         core_1.Component({
