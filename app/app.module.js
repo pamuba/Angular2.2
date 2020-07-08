@@ -11,18 +11,25 @@ var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
 // import { EmployeeListComponent } from './employeeList.component';
 var http_1 = require("@angular/http");
+var router_1 = require("@angular/router");
 var app_routing_module_1 = require("./app-routing.module");
 var employeeTitle_pipe_1 = require("./employeeTitle.pipe");
 var child_component_1 = require("./child.component");
 var employee_list_component_1 = require("./employee-list.component");
 var employee_detail_component_1 = require("./employee-detail.component");
+var department_list_1 = require("./department-list");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, employee_list_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, child_component_1.ChildComponent, employee_detail_component_1.EmployeeDetailComponent],
+            imports: [platform_browser_1.BrowserModule, http_1.HttpModule,
+                router_1.RouterModule.forRoot([
+                    { path: "departments", component: department_list_1.DepartmentListComponent },
+                    { path: "employees", component: employee_list_component_1.EmployeeListComponent }
+                ]),
+                app_routing_module_1.AppRoutingModule],
+            declarations: [app_component_1.AppComponent, department_list_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, child_component_1.ChildComponent, employee_detail_component_1.EmployeeDetailComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

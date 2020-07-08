@@ -5,6 +5,7 @@ import { EmployeeService } from './employee.service';
 @Component({
   selector: 'my-app',
   template: `
+                <!--
                 <h1>Parent App Component</h1>
                 <label>Enter Parent App Coponent Value</label>
                 <input type="text" #ptext (keyup)="0">
@@ -16,6 +17,14 @@ import { EmployeeService } from './employee.service';
                 <employee-list></employee-list>
                 <hr>
                 <employee-detail></employee-detail>
+                -->
+
+                <h1>Routing Application</h1>
+                <nav>
+                  <a routerLink="/departments" routerLinkActive="active">Departments</a>
+                  <a routerLink="/employees" routerLinkActive="active">Employees</a>
+                </nav>
+                <router-outlet></router-outlet>
              `,
   providers:[EmployeeService] //registering
 })

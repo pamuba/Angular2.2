@@ -10,11 +10,20 @@ import { EmployeeTitlePipe} from './employeeTitle.pipe'
 import { ChildComponent } from './child.component'
 import { EmployeeListComponent } from './employee-list.component'
 import { EmployeeDetailComponent } from './employee-detail.component'
+import { DepartmentListComponent } from './department-list'
+
 
 
 @NgModule({
-  imports:      [ BrowserModule , HttpModule, AppRoutingModule ],
-  declarations: [ AppComponent , EmployeeListComponent, EmployeeTitlePipe, ChildComponent, EmployeeDetailComponent],
+  imports:      [ BrowserModule , HttpModule,
+    
+    RouterModule.forRoot([
+      {path:"departments", component:DepartmentListComponent},
+      {path:"employees", component:EmployeeListComponent}
+    ])
+    
+    ,AppRoutingModule ],
+  declarations: [ AppComponent ,DepartmentListComponent, EmployeeListComponent, EmployeeTitlePipe, ChildComponent, EmployeeDetailComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
