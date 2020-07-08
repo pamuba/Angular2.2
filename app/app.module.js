@@ -9,18 +9,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var app_component_1 = require("./app.component");
-var employeeList_component_1 = require("./employeeList.component");
+// import { EmployeeListComponent } from './employeeList.component';
 var http_1 = require("@angular/http");
 var app_routing_module_1 = require("./app-routing.module");
 var employeeTitle_pipe_1 = require("./employeeTitle.pipe");
 var child_component_1 = require("./child.component");
+var employee_list_component_1 = require("./employee-list.component");
+var employee_detail_component_1 = require("./employee-detail.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routing_module_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, employeeList_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, child_component_1.ChildComponent],
+            declarations: [app_component_1.AppComponent, employee_list_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, child_component_1.ChildComponent, employee_detail_component_1.EmployeeDetailComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

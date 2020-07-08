@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeeService } from './employee.service';
 
 
 @Component({
@@ -12,8 +13,11 @@ import { Component } from '@angular/core';
                 <my-child (childEvent)="childData = $event" 
                 [parentData]="ptext.value">
                 </my-child>
+                <employee-list></employee-list>
+                <hr>
+                <employee-detail></employee-detail>
              `,
-  providers:[] //registering
+  providers:[EmployeeService] //registering
 })
 export class AppComponent  { 
   public childData:string;
