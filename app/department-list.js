@@ -12,8 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var DepartmentListComponent = /** @class */ (function () {
-    function DepartmentListComponent(router) {
+    function DepartmentListComponent(router, route) {
         this.router = router;
+        this.route = route;
         this.departments = [
             { "id": 1, "name": "Angular" },
             { "id": 2, "name": "Node" },
@@ -23,15 +24,26 @@ var DepartmentListComponent = /** @class */ (function () {
             { "id": 6, "name": "React" },
         ];
     }
+    DepartmentListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            var id = parseInt(params['id']);
+            _this.selectedId = id;
+        });
+    };
     DepartmentListComponent.prototype.onSelect = function (department) {
-        this.router.navigate(['/departments', department.id]);
+        // this.router.navigate(['/departments', department.id])
+        this.router.navigate([department.id], { relativeTo: this.route });
+    };
+    DepartmentListComponent.prototype.isSelected = function (dep) {
+        return dep.id == this.selectedId;
     };
     DepartmentListComponent = __decorate([
         core_1.Component({
             selector: 'department-list',
-            template: "<h3>Department List</h3>\n    <ul class=\"items\">\n        <li (click)=\"onSelect(dep)\" *ngFor=\"let dep of departments\">\n            <span class=\"badge\">{{dep.id}}</span>{{dep.name}}\n        </li>\n    </ul>"
+            template: "<h3>Department List</h3>\n    <ul class=\"items\">\n        <li (click)=\"onSelect(dep)\"  [class.selected]=\"isSelected(dep)\"  *ngFor=\"let dep of departments\">\n            <span class=\"badge\">{{dep.id}}</span>{{dep.name}}\n        </li>\n    </ul>"
         }),
-        __metadata("design:paramtypes", [router_1.Router])
+        __metadata("design:paramtypes", [router_1.Router, router_1.ActivatedRoute])
     ], DepartmentListComponent);
     return DepartmentListComponent;
 }());

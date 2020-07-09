@@ -116,8 +116,8 @@ nav a.active {
   border-radius: 4px 0 0 4px;
 }
 .items li.selected {
-  background-color: #CFD8DC;
-  color: white;
+  background-color: #888888;
+  color: rgb(47, 102, 59);
 }
 /* everywhere else */
 * { 

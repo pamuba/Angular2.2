@@ -3,12 +3,18 @@ import { RouterModule, Routes } from '@angular/router'
 import { DepartmentListComponent } from './department-list'
 import { EmployeeListComponent } from './employee-list.component'
 import { DepartmentDetailComponent } from './department-detail.component'
+import { HomeComponent } from './home.component'
+import { PageComponent } from './page.componemt'
 
 
 const routes: Routes= [
-    {path:"departments", component:DepartmentListComponent},
+    
+    {path:'', redirectTo:'/random', pathMatch:'full'},
+    {path:"random", component:DepartmentListComponent},
     {path:"employees", component:EmployeeListComponent},
-    {path:'departments/:id', component:DepartmentDetailComponent}
+    {path:'random/:id', component:DepartmentDetailComponent},
+    {path:'**', component:PageComponent}
+    
 ]
 
 @NgModule({
@@ -20,4 +26,4 @@ const routes: Routes= [
     ]
 })
 export class AppRoutingModule{}
-export const routingComponents = [DepartmentListComponent,EmployeeListComponent, DepartmentDetailComponent]
+export const routingComponents = [PageComponent, HomeComponent, DepartmentListComponent,EmployeeListComponent, DepartmentDetailComponent]

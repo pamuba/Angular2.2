@@ -11,10 +11,14 @@ var router_1 = require("@angular/router");
 var department_list_1 = require("./department-list");
 var employee_list_component_1 = require("./employee-list.component");
 var department_detail_component_1 = require("./department-detail.component");
+var home_component_1 = require("./home.component");
+var page_componemt_1 = require("./page.componemt");
 var routes = [
-    { path: "departments", component: department_list_1.DepartmentListComponent },
+    { path: '', redirectTo: '/random', pathMatch: 'full' },
+    { path: "random", component: department_list_1.DepartmentListComponent },
     { path: "employees", component: employee_list_component_1.EmployeeListComponent },
-    { path: 'departments/:id', component: department_detail_component_1.DepartmentDetailComponent }
+    { path: 'random/:id', component: department_detail_component_1.DepartmentDetailComponent },
+    { path: '**', component: page_componemt_1.PageComponent }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -32,5 +36,5 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 exports.AppRoutingModule = AppRoutingModule;
-exports.routingComponents = [department_list_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent, department_detail_component_1.DepartmentDetailComponent];
+exports.routingComponents = [page_componemt_1.PageComponent, home_component_1.HomeComponent, department_list_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent, department_detail_component_1.DepartmentDetailComponent];
 //# sourceMappingURL=app-routing.module.js.map

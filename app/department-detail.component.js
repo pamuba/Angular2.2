@@ -34,10 +34,15 @@ var DepartmentDetailComponent = /** @class */ (function () {
         var nextId = this.departmentId + 1;
         this.router.navigate(['/departments', nextId]);
     };
+    DepartmentDetailComponent.prototype.gotoDepartments = function () {
+        var selectedId = this.departmentId ? this.departmentId : null;
+        // this.router.navigate(['/departments', {id:selectedId, random:"random"}])
+        this.router.navigate(['../', { id: selectedId }], { relativeTo: this.route }); //move one path upwards..departments
+    };
     DepartmentDetailComponent = __decorate([
         core_1.Component({
             selector: 'employee-detail',
-            template: "<h3>You Selected department with id = {{departmentId}}</h3>\n             <a (click)=\"goPrevious()\">Previous</a>\n             <a (click)=\"goNext()\">Next</a>"
+            template: "<h3>You Selected department with id = {{departmentId}}</h3>\n             <a (click)=\"goPrevious()\">Previous</a>\n             <a (click)=\"goNext()\">Next</a>\n             <p>\n               <button (click)=\"gotoDepartments()\">Back</button>\n             </p>"
         }),
         __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router])
     ], DepartmentDetailComponent);
