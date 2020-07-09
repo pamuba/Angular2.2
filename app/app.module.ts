@@ -4,7 +4,7 @@ import { AppComponent }  from './app.component';
 
 // import { EmployeeListComponent } from './employeeList.component';
 import { HttpModule } from '@angular/http'
-import { RouterModule } from '@angular/router' 
+
 import { AppRoutingModule } from './app-routing.module'
 import { EmployeeTitlePipe} from './employeeTitle.pipe'
 import { EmployeeDetailComponent } from './employee-detail.component'
