@@ -18,7 +18,7 @@ import { EmployeeService } from './employee.service';
                 <hr>
                 <employee-detail></employee-detail>
                 
-                -->
+               
 
                 <h1>Routing Application</h1>
                 <nav>
@@ -26,10 +26,14 @@ import { EmployeeService } from './employee.service';
                   <a routerLink="/employees" routerLinkActive="active">Employees</a>
                 </nav>
                 <router-outlet></router-outlet>
-                
+                -->
+                Your Text:<input type="text" [(ngModel)]='userText'>
+                <simple [simpleInput]='userText'></simple>
              `,
   providers:[EmployeeService] //registering
 })
 export class AppComponent  { 
   public childData:string;
+
+  userText:string = "Angular";
 }

@@ -10,11 +10,12 @@ var core_1 = require("@angular/core");
 var employee_service_1 = require("./employee.service");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
+        this.userText = "Angular";
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n                <!--\n                <h1>Parent App Component</h1>\n                <label>Enter Parent App Coponent Value</label>\n                <input type=\"text\" #ptext (keyup)=\"0\">\n                <p>Value from the Child Component is:</p>\n                {{childData}}\n                <my-child (childEvent)=\"childData = $event\" \n                [parentData]=\"ptext.value\">\n                </my-child>\n                <employee-list></employee-list>\n                <hr>\n                <employee-detail></employee-detail>\n                \n                -->\n\n                <h1>Routing Application</h1>\n                <nav>\n                  <a routerLink=\"/departments\" routerLinkActive=\"active\">Departments</a>\n                  <a routerLink=\"/employees\" routerLinkActive=\"active\">Employees</a>\n                </nav>\n                <router-outlet></router-outlet>\n                \n             ",
+            template: "\n                <!--\n                <h1>Parent App Component</h1>\n                <label>Enter Parent App Coponent Value</label>\n                <input type=\"text\" #ptext (keyup)=\"0\">\n                <p>Value from the Child Component is:</p>\n                {{childData}}\n                <my-child (childEvent)=\"childData = $event\" \n                [parentData]=\"ptext.value\">\n                </my-child>\n                <employee-list></employee-list>\n                <hr>\n                <employee-detail></employee-detail>\n                \n               \n\n                <h1>Routing Application</h1>\n                <nav>\n                  <a routerLink=\"/departments\" routerLinkActive=\"active\">Departments</a>\n                  <a routerLink=\"/employees\" routerLinkActive=\"active\">Employees</a>\n                </nav>\n                <router-outlet></router-outlet>\n                -->\n                Your Text:<input type=\"text\" [(ngModel)]='userText'>\n                <simple [simpleInput]='userText'></simple>\n             ",
             providers: [employee_service_1.EmployeeService] //registering
         })
     ], AppComponent);
