@@ -24,11 +24,7 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule,
-                router_1.RouterModule.forRoot([
-                    { path: "departments", component: department_list_1.DepartmentListComponent },
-                    { path: "employees", component: employee_list_component_1.EmployeeListComponent }
-                ]),
-                app_routing_module_1.AppRoutingModule],
+                router_1.RouterModule.forRoot([]), app_routing_module_1.AppRoutingModule],
             declarations: [app_component_1.AppComponent, department_list_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent, employeeTitle_pipe_1.EmployeeTitlePipe, child_component_1.ChildComponent, employee_detail_component_1.EmployeeDetailComponent],
             bootstrap: [app_component_1.AppComponent]
         })

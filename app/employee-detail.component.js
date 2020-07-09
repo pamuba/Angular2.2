@@ -24,7 +24,8 @@ var EmployeeDetailComponent = /** @class */ (function () {
     EmployeeDetailComponent = __decorate([
         core_1.Component({
             selector: "employee-detail",
-            template: "\n        <h2>Employee List</h2>\n        <ul *ngFor=\"let emp of employees\">\n            <li>{{emp.code}}  {{emp.name}} {{emp.dateOfBirth}}</li>\n        </ul>\n    "
+            template: "\n        <h2>Employee List</h2>\n        <ul *ngFor=\"let emp of employees\">\n            <li>{{emp.code}}  {{emp.name}} {{emp.dateOfBirth}}</li>\n        </ul>\n    ",
+            providers: []
         }),
         __metadata("design:paramtypes", [employee_service_1.EmployeeService])
     ], EmployeeDetailComponent);

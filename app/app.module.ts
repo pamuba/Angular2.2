@@ -15,14 +15,9 @@ import { DepartmentListComponent } from './department-list'
 
 
 @NgModule({
-  imports:      [ BrowserModule , HttpModule,
+  imports:[ BrowserModule , HttpModule,
+    RouterModule.forRoot([]),AppRoutingModule ],
     
-    RouterModule.forRoot([
-      {path:"departments", component:DepartmentListComponent},
-      {path:"employees", component:EmployeeListComponent}
-    ])
-    
-    ,AppRoutingModule ],
   declarations: [ AppComponent ,DepartmentListComponent, EmployeeListComponent, EmployeeTitlePipe, ChildComponent, EmployeeDetailComponent],
   bootstrap:    [ AppComponent ]
 })

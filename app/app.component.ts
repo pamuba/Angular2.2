@@ -17,6 +17,7 @@ import { EmployeeService } from './employee.service';
                 <employee-list></employee-list>
                 <hr>
                 <employee-detail></employee-detail>
+                
                 -->
 
                 <h1>Routing Application</h1>
@@ -25,6 +26,7 @@ import { EmployeeService } from './employee.service';
                   <a routerLink="/employees" routerLinkActive="active">Employees</a>
                 </nav>
                 <router-outlet></router-outlet>
+                
              `,
   providers:[EmployeeService] //registering
 })

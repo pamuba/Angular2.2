@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit,  } from '@angular/core'
 import { EmployeeService } from './employee.service';
+import { Http } from '@angular/http';
+
 
 @Component({
     selector:`employee-detail`,
@@ -8,7 +10,10 @@ import { EmployeeService } from './employee.service';
         <ul *ngFor="let emp of employees">
             <li>{{emp.code}}  {{emp.name}} {{emp.dateOfBirth}}</li>
         </ul>
-    `
+    `,
+    providers:[
+        
+    ]
 })
 export class EmployeeDetailComponent implements OnInit{
 

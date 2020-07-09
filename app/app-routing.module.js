@@ -8,7 +8,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var routes = [];
+var department_list_1 = require("./department-list");
+var employee_list_component_1 = require("./employee-list.component");
+var routes = [
+    { path: "departments", component: department_list_1.DepartmentListComponent },
+    { path: "employees", component: employee_list_component_1.EmployeeListComponent }
+];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
@@ -25,4 +30,5 @@ var AppRoutingModule = /** @class */ (function () {
     return AppRoutingModule;
 }());
 exports.AppRoutingModule = AppRoutingModule;
+exports.routingComponents = [department_list_1.DepartmentListComponent, employee_list_component_1.EmployeeListComponent];
 //# sourceMappingURL=app-routing.module.js.map

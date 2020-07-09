@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-
-
-
+import { DepartmentListComponent } from './department-list'
+import { EmployeeListComponent } from './employee-list.component'
 
 const routes: Routes= [
-   
+    {path:"departments", component:DepartmentListComponent},
+    {path:"employees", component:EmployeeListComponent}
 ]
+
 @NgModule({
     imports:[
         RouterModule.forRoot(routes)
@@ -16,3 +17,4 @@ const routes: Routes= [
     ]
 })
 export class AppRoutingModule{}
+export const routingComponents = [DepartmentListComponent,EmployeeListComponent]
